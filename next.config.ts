@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+const config = {
+  // experimental: {
+  //   dynamicIO: true,
+  // },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.shopify.com",
+        pathname: "/s/files/**",
+      },
+    ],
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default config
