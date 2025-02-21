@@ -6,7 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation"
 import { Fragment, Suspense, useEffect, useState } from "react"
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import { Menu } from "@/lib/shopify/types"
+// import { Menu } from "@/lib/shopify/types"
 import Search, { SearchSkeleton } from "./search"
 import { ShopifyCollection } from "@/lib/shopify/types"
 import Image from "next/image"
@@ -87,6 +87,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                   <Link
                     key={item.handle}
                     href={item.path}
+                    prefetch={true}
                     className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
                   >
                     <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-primary">

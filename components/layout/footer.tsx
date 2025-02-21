@@ -184,12 +184,12 @@ export default async function Footer() {
           </p>
           <div className="flex max-sm:mt-2 flex-col md:ml-auto justify-center md:flex-row items-center lg:gap-6 gap-2">
             <p>
-              <a
-                href="https://vercel.com"
+              <Link
+                href="/privacy-policy"
                 className="text-black dark:text-white"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </p>
             <p>
               <Link
