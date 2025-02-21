@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   HIDDEN_PRODUCT_TAG,
   SHOPIFY_GRAPHQL_API_ENDPOINT,
@@ -6,8 +7,8 @@ import {
 import { isShopifyError } from "@/lib/type-guards"
 import { ensureStartsWith } from "@/lib/utils"
 import {
-  unstable_cacheLife as cacheLife,
-  unstable_cacheTag as cacheTag,
+  // unstable_cacheLife as cacheLife,
+  // unstable_cacheTag as cacheTag,
   revalidateTag,
 } from "next/cache"
 import { cookies, headers } from "next/headers"
@@ -197,11 +198,12 @@ const reshapeProduct = (
     return undefined
   }
 
-  const { media, variants, ...rest } = product
+  const { variants, ...rest } = product
 
   return {
     ...rest,
-    images: reshapeImages(media, product.title),
+    media: product.media,
+    images: reshapeImages(product.media, product.title),
     variants: removeEdgesAndNodes(variants),
   }
 }
@@ -233,7 +235,10 @@ export async function createCart(): Promise<Cart> {
 export async function addToCart(
   lines: { merchandiseId: string; quantity: number }[]
 ): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!
+  const cartId = (await cookies()).get("cartId")?.value
+  if (!cartId) {
+    throw new Error("Missing cart ID")
+  }
   const res = await shopifyFetch<ShopifyAddToCartOperation>({
     query: addToCartMutation,
     variables: {
@@ -245,7 +250,10 @@ export async function addToCart(
 }
 
 export async function removeFromCart(lineIds: string[]): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!
+  const cartId = (await cookies()).get("cartId")?.value
+  if (!cartId) {
+    throw new Error("Missing cart ID")
+  }
   const res = await shopifyFetch<ShopifyRemoveFromCartOperation>({
     query: removeFromCartMutation,
     variables: {
@@ -260,7 +268,10 @@ export async function removeFromCart(lineIds: string[]): Promise<Cart> {
 export async function updateCart(
   lines: { id: string; merchandiseId: string; quantity: number }[]
 ): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!
+  const cartId = (await cookies()).get("cartId")?.value
+  if (!cartId) {
+    throw new Error("Missing cart ID")
+  }
   const res = await shopifyFetch<ShopifyUpdateCartOperation>({
     query: editCartItemsMutation,
     variables: {
@@ -384,7 +395,7 @@ export async function getCollections(): Promise<Collection[]> {
     ),
   ]
 
-  return collections
+  return collections as Collection[]
 }
 
 export async function getMenu(handle: string): Promise<Menu[]> {

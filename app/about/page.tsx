@@ -24,11 +24,15 @@ export default function AboutPage() {
           <p className="mb-8 max-w-2xl text-sm text-gray-200 sm:text-xl">
             We believe in fashion that looks good, feels good, and does good.
             Our commitment to sustainable practices and timeless design creates
-            clothing that you'll love for years to come.
+            clothing that you&apos;ll love for years to come.
           </p>
-          <button className="gap-2 text-sm md:text-base bg-white text-black flex hover:bg-gray-200 hover:text-black transition-colors duration-300 font-medium items-center justify-center px-4 py-3 rounded-full">
+          <Link
+            href="/search"
+            prefetch={true}
+            className="gap-2 text-sm md:text-base bg-white text-black flex hover:bg-gray-200 hover:text-black transition-colors duration-300 font-medium items-center justify-center px-4 py-3 rounded-full"
+          >
             Shop Collection <ArrowRight className="h-4 w-4" />
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -52,10 +56,10 @@ export default function AboutPage() {
                 Founded in 2020, we set out to create a clothing brand that
                 combines contemporary design with sustainable practices. Our
                 journey began in a small workshop with a simple idea: fashion
-                shouldn't come at the expense of our planet.
+                shouldn&apos;t come at the expense of our planet.
               </p>
               <p className="mb-8 text-muted-foreground">
-                Today, we're proud to offer a collection that reflects our
+                Today, we&apos;re proud to offer a collection that reflects our
                 commitment to quality, sustainability, and timeless style. Every
                 piece is thoughtfully designed and ethically produced, ensuring
                 that you not only look good but feel good about your choices.
@@ -175,7 +179,7 @@ export default function AboutPage() {
                       ))}
                     </div>
                     <p className="text-muted-foreground">
-                      "{testimonial.quote}"
+                      {`"${testimonial.quote}"`}
                     </p>
                     <div className="mt-2">
                       <p className="font-semibold">{testimonial.author}</p>

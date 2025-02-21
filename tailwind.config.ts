@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Config } from "tailwindcss"
 import plugin from "tailwindcss/plugin"
 import typography from "@tailwindcss/typography"
@@ -22,16 +23,14 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          from: { opacity: 0 },
-          to: {
-            opacity: 1,
-          },
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
-      },
-      blink: {
-        "0%": { opacity: 0.2 },
-        "20%": { opacity: 1 },
-        "100%": { opacity: 0.2 },
+        blink: {
+          "0%": { opacity: "0.2" },
+          "20%": { opacity: "1" },
+          "100%": { opacity: "0.2" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.3s ease-in-out",

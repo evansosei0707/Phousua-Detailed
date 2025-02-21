@@ -2,10 +2,12 @@ import Link from "next/link"
 
 import FooterMenu from "@/components/layout/footer-menu"
 import LogoSquare from "@/components/logo-square"
-import { getMenu } from "@/lib/shopify"
+// import { getMenu } from "@/lib/shopify"
 import { Suspense } from "react"
 import { menu } from "./navbar"
 import { Menu } from "@/lib/shopify/types"
+import { IoLogoWhatsapp } from "react-icons/io5"
+import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"
 
 const { COMPANY_NAME, SITE_NAME } = process.env
 
@@ -28,26 +30,31 @@ const quickLinks: Menu[] = [
   },
 ]
 
-const socialLinks: Menu[] = [
+export const socialLinks: Menu[] = [
   {
     title: "Facebook",
     path: "https://www.facebook.com/Phosua-Detailed-108957391230704",
+    icon: <FaFacebook />,
   },
   {
     title: "Twitter(X)",
     path: "https://twitter.com/PDetailed",
+    icon: <FaTwitter />,
   },
   {
     title: "Instagram",
     path: "https://www.instagram.com/phosua_detailed/?hl=en",
+    icon: <FaInstagram />,
   },
   {
     title: "Youtube",
     path: "https://www.youtube.com/watch?v=czsR3bqG6oE",
+    icon: <FaYoutube />,
   },
   {
     title: "Whatsapp",
     path: "https://wa.me/+233243058348",
+    icon: <IoLogoWhatsapp />,
   },
 ]
 

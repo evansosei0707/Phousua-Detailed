@@ -19,7 +19,7 @@ const WearToWedding = () => {
         </p>
         <Link
           prefetch={true}
-          href="/bridal"
+          href="/search/bridal"
           className=" dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 dark:border-white border-2 border-black hover:border-black bg-black text-white rounded-full px-[50px] py-4 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 text-center"
         >
           Shop Now

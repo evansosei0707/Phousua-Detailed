@@ -50,6 +50,7 @@ export type Image = {
 export type Menu = {
   title: string
   path: string
+  icon?: React.ReactNode
 }
 
 export type Money = {
