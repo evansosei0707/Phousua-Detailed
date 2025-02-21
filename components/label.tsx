@@ -21,7 +21,7 @@ const Label = ({
         </h3>
         {description ? (
           <Prose
-            className=" text-sm leading-tight text-[#AAAAAA] line-clamp-1 font-normal  dark:text-white/[60%]"
+            className=" text-sm leading-tight text-secondary/60 dark:text-secondary font-medium line-clamp-1  dark:text-white/[60%]"
             html={description}
           />
         ) : null}

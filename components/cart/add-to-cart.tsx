@@ -7,6 +7,7 @@ import { useProduct } from "@/components/product/product-context"
 import { Product, ProductVariant } from "@/lib/shopify/types"
 import { useActionState } from "react"
 import { useCart } from "./cart-context"
+import { useState } from "react"
 
 function SubmitButton({
   availableForSale,
@@ -15,6 +16,7 @@ function SubmitButton({
   availableForSale: boolean
   selectedVariantId: string | undefined
 }) {
+  const [showMessage, setShowMessage] = useState(false)
   const buttonClasses =
     "relative flex w-full items-center justify-center rounded-full bg-primary p-4 tracking-wide text-white"
   const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60"
@@ -29,16 +31,28 @@ function SubmitButton({
 
   if (!selectedVariantId) {
     return (
-      <button
-        aria-label="Please select an option"
-        disabled
-        className={clsx(buttonClasses, disabledClasses)}
-      >
-        <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
-        </div>
-        Add To Cart
-      </button>
+      <>
+        <button
+          aria-label="Please select an option"
+          onClick={(e) => {
+            e.preventDefault()
+            setShowMessage(true)
+            // Hide message after 3 seconds
+            setTimeout(() => setShowMessage(false), 3000)
+          }}
+          className={clsx(buttonClasses, disabledClasses)}
+        >
+          <div className="absolute left-0 ml-4">
+            <PlusIcon className="h-5" />
+          </div>
+          Add To Cart
+        </button>
+        {showMessage && (
+          <p className="mt-2 text-sm text-red-500 text-center">
+            Please select a size first
+          </p>
+        )}
+      </>
     )
   }
 
@@ -88,7 +102,11 @@ export function AddToCart({ product }: { product: Product }) {
         availableForSale={availableForSale}
         selectedVariantId={selectedVariantId}
       />
-      <p aria-live="polite" className="sr-only" role="status">
+      <p
+        aria-live="polite"
+        className="sr-only text-black text-lg"
+        role="status"
+      >
         {message}
       </p>
     </form>

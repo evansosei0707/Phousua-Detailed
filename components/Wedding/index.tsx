@@ -13,14 +13,14 @@ const WearToWedding = () => {
         <h2 className=" text-[29px] md:text-[38px]  lg:text-[50px] font-semibold uppercase">
           Wear to Wedding?
         </h2>
-        <p className="text-secondary/60 text-sm md:text-base font-medium text-center max-sm:max-w-[95%] lg:max-w-[500px]">
+        <p className="text-secondary/60 pb-2 dark:text-secondary text-sm md:text-base font-medium text-center max-sm:max-w-[95%] lg:max-w-[500px]">
           We offer a wide range of wedding accessories to help you look your
           best on your big day.
         </p>
         <Link
           prefetch={true}
           href="/search/bridal"
-          className=" dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 dark:border-white border-2 border-black hover:border-black bg-black text-white rounded-full px-[50px] py-4 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 text-center"
+          className=" dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 dark:border-white border-2 border-black hover:border-black bg-black text-white rounded-full px-[46px] py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 text-center"
         >
           Shop Now
         </Link>

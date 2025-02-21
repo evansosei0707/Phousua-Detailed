@@ -16,7 +16,7 @@ const NewCollection = async () => {
         <h2 className=" text-[30px] md:text-[40px]  lg:text-[55px] font-semibold uppercase">
           New Collection
         </h2>
-        <p className="text-gray-500">
+        <p className="text-secondary/60 dark:text-secondary md:text-lg">
           Our latest collection, where classic and contemporary converge in
           perfect harmony.
         </p>
