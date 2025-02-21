@@ -2,15 +2,20 @@
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 import Form from "next/form"
+import clsx from "clsx"
 import { useSearchParams } from "next/navigation"
 
-export default function Search() {
+export default function Search({
+  inputClassName,
+}: {
+  inputClassName?: string
+}) {
   const searchParams = useSearchParams()
 
   return (
     <Form
       action="/search"
-      className="w-max-[550px] relative w-[70%] lg:w-80 xl:w-full"
+      className="w-max-[550px] relative max-md:w-full w-[70%] lg:w-80 xl:w-full"
     >
       <input
         key={searchParams?.get("q")}
@@ -19,7 +24,10 @@ export default function Search() {
         placeholder="Search for products..."
         autoComplete="off"
         defaultValue={searchParams?.get("q") || ""}
-        className="text-md w-full rounded-full border bg-white px-4 py-3 text-black placeholder:text-neutral-500 md:text-sm dark:border-neutral-800 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400"
+        className={clsx(
+          "text-md w-full rounded-full border bg-white px-4 py-3 text-black placeholder:text-neutral-500 md:text-sm dark:border-neutral-800 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400",
+          inputClassName
+        )}
       />
       <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />

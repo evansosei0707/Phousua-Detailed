@@ -8,8 +8,11 @@ import { Fragment, Suspense, useEffect, useState } from "react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { Menu } from "@/lib/shopify/types"
 import Search, { SearchSkeleton } from "./search"
+import { ShopifyCollection } from "@/lib/shopify/types"
+import Image from "next/image"
+import allCollectionsImage from "@/public/images/all_collections.webp"
 
-export default function MobileMenu({ menu }: { menu: Menu[] }) {
+export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
@@ -73,27 +76,32 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
 
                 <div className="mb-4 w-full">
                   <Suspense fallback={<SearchSkeleton />}>
-                    <Search />
+                    <Search inputClassName="w-full py-1" />
                   </Suspense>
                 </div>
-                {menu.length ? (
-                  <ul className="flex w-full flex-col">
-                    {menu.map((item: Menu) => (
-                      <li
-                        className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
-                        key={item.title}
-                      >
-                        <Link
-                          href={item.path}
-                          prefetch={true}
-                          onClick={closeMobileMenu}
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500 md:block dark:text-neutral-400">
+                  Collections
+                </h3>
+
+                {menu.map((item: ShopifyCollection) => (
+                  <Link
+                    key={item.handle}
+                    href={item.path}
+                    className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
+                  >
+                    <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-primary">
+                      <Image
+                        src={item?.image?.url || allCollectionsImage}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="text-secondary font-medium text-lg transition-colors group-hover:text-white">
+                      {item.title}
+                    </span>
+                  </Link>
+                ))}
               </div>
             </Dialog.Panel>
           </Transition.Child>

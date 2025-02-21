@@ -119,6 +119,7 @@ export type ShopifyCollection = {
   description: string
   seo: SEO
   updatedAt: string
+  path: string
 }
 
 export type ShopifyProductOG = {

@@ -7,6 +7,7 @@ import Link from "next/link"
 import { Suspense } from "react"
 import MobileMenu from "./mobile-menu"
 import Search, { SearchSkeleton } from "./search"
+import { getCollections } from "@/lib/shopify"
 
 // const { SITE_NAME } = process.env
 export const menu: Menu[] = [
@@ -30,6 +31,11 @@ export const menu: Menu[] = [
 
 export async function Navbar() {
   // const menu = await getMenu('next-js-frontend-header-menu');
+  const collections = await getCollections()
+
+  const menu = collections.filter(
+    (collection) => collection.handle !== "home-page-featured"
+  )
 
   return (
     <nav className="relative flex items-center py-5 justify-between">
