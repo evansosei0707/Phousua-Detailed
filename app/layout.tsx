@@ -38,7 +38,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={poppins.className}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500  max-w-[2000px] mx-auto px-4 md:px-6 lg:px-10 dark:selection:text-white">
+      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500  max-w-[1500px] mx-auto px-4 md:px-6 lg:px-10 dark:selection:text-white">
         <CartProvider cartPromise={cart}>
           <Navbar />
           <main className="">

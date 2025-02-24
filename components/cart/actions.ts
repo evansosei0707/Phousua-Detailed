@@ -24,7 +24,7 @@ export async function addItem(
   try {
     await addToCart([{ merchandiseId: selectedVariantId, quantity: 1 }])
     revalidateTag(TAGS.cart)
-  } catch (e) {
+  } catch (e: unknown) {
     return "Error adding item to cart"
   }
 }
@@ -47,7 +47,7 @@ export async function removeItem(prevState: any, merchandiseId: string) {
     } else {
       return "Item not found in cart"
     }
-  } catch (e) {
+  } catch (e: unknown) {
     return "Error removing item from cart"
   }
 }
@@ -97,11 +97,11 @@ export async function updateItemQuantity(
 }
 
 export async function redirectToCheckout() {
-  let cart = await getCart()
+  const cart = await getCart()
   redirect(cart!.checkoutUrl)
 }
 
 export async function createCartAndSetCookie() {
-  let cart = await createCart()
+  const cart = await createCart()
   ;(await cookies()).set("cartId", cart.id!)
 }

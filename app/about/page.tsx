@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="relative h-[45vh] md:h-[65vh] rounded-2xl  w-full overflow-hidden">
         <Image
           src={heroImage}
-          alt="Fashion collection showcase"
+          alt="Fashion collection showcase "
           className="object-cover"
           fill
           priority

@@ -17,6 +17,7 @@ function FilterItemList({ list }: { list: ListItem[] }) {
         <Link
           key={item.handle}
           href={item.path}
+          prefetch={true}
           className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
         >
           <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-primary">
