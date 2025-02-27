@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect } from "react"
 import { toast } from "sonner"
 
@@ -8,7 +9,7 @@ export function WelcomeToast() {
     // ignore if screen height is too small
     if (window.innerHeight < 650) return
     if (!document.cookie.includes("welcome-toast=2")) {
-      toast("🛍️ Welcome to Next.js Commerce!", {
+      toast("🛍️ Welcome to Phosua Detailed", {
         id: "welcome-toast",
         duration: Infinity,
         onDismiss: () => {
@@ -16,15 +17,15 @@ export function WelcomeToast() {
         },
         description: (
           <>
-            This is a high-performance, SSR storefront powered by Shopify,
-            Next.js, and Vercel.{" "}
-            <a
-              href="https://vercel.com/templates/next.js/nextjs-commerce"
+            Your best authentic African retail and wholesale online shop
+            offering quality and affordable clothing.
+            <Link
+              href="/search"
               className="text-blue-600 hover:underline"
-              target="_blank"
+              prefetch={true}
             >
-              Deploy your own
-            </a>
+              Take a tour of into our collections
+            </Link>
             .
           </>
         ),

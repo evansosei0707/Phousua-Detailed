@@ -1,11 +1,10 @@
-import React from "react"
 import Image from "next/image"
 import wedding from "@/public/images/wedding.jpg"
 import Link from "next/link"
 
 const WearToWedding = () => {
   return (
-    <div className=" relative flex w-full flex-col items-center justify-center gap-4 mx-auto py-10">
+    <div className=" flex w-full flex-col items-center h-max justify-center gap-4 mx-auto py-10">
       <div className="flex w-full rounded-xl lg:rounded-2xl overflow-hidden h-[170px] md:h-[270px] lg:h-[300px] items-center justify-center gap-4">
         <Image src={wedding} alt="wedding" className="object-contain" />
       </div>

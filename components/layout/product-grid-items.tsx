@@ -1,4 +1,3 @@
-// import Grid from '@/components/grid';
 import Grid from "@/components/grid"
 import { GridTileImage } from "@/components/grid/tile"
 import { Product } from "@/lib/shopify/types"
@@ -13,25 +12,29 @@ export default function ProductGridItems({
   return (
     <>
       {products.map((product) => (
-        <Grid.Item key={product.handle} className=" animate-fade">
+        <Grid.Item key={product.handle} className="animate-fade min-h-[600px]">
           <Link
-            className="relative  h-full w-full"
+            className="flex h-full w-full flex-col"
             href={`/product/${product.handle}`}
             prefetch={true}
           >
-            <GridTileImage
-              alt={product.title}
-              label={{
-                title: product.title,
-                amount: product.priceRange.maxVariantPrice.amount,
-                currencyCode: product.priceRange.maxVariantPrice.currencyCode,
-              }}
-              src={product.featuredImage?.url}
-              fill
-              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-              // sizes="100vw"
-              className="object-cover object-top"
-            />
+            <div className=" h-full w-full overflow-hidden ">
+              <GridTileImage
+                alt={product.title}
+                label={{
+                  title: product.title,
+                  amount: product.priceRange.maxVariantPrice.amount,
+                  currencyCode: product.priceRange.maxVariantPrice.currencyCode,
+                }}
+                src={product.featuredImage?.url}
+                secondImage={product.images[1]?.image.url}
+                fill
+                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover xl:object-contain object-center"
+                priority={true}
+                quality={90}
+              />
+            </div>
             {product.title && product.priceRange.maxVariantPrice.amount && (
               <Label
                 title={product.title}

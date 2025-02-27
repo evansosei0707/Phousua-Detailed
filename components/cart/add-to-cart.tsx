@@ -18,7 +18,7 @@ function SubmitButton({
 }) {
   const [showMessage, setShowMessage] = useState(false)
   const buttonClasses =
-    "relative flex w-full items-center justify-center rounded-full bg-primary p-4 tracking-wide text-white"
+    "relative flex w-full items-center justify-center rounded-full bg-black dark:bg-white dark:text-black p-4 tracking-wide text-white"
   const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60"
 
   if (!availableForSale) {

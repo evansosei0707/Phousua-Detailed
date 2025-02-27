@@ -7,7 +7,8 @@ import { Suspense } from "react"
 import { menu } from "./navbar"
 import { Menu } from "@/lib/shopify/types"
 import { IoLogoWhatsapp } from "react-icons/io5"
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"
+import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 
 const { COMPANY_NAME, SITE_NAME } = process.env
 
@@ -39,7 +40,7 @@ export const socialLinks: Menu[] = [
   {
     title: "Twitter(X)",
     path: "https://twitter.com/PDetailed",
-    icon: <FaTwitter />,
+    icon: <FaXTwitter />,
   },
   {
     title: "Instagram",
@@ -145,11 +146,23 @@ export default async function Footer() {
             <h3 className="text-sm font-semibold text-black dark:text-white">
               Our Socials
             </h3>
-            <ul className="flex flex-col items-start gap-1">
+            <ul className="flex flex-col items-start gap-4">
               {socialLinks ? (
                 socialLinks.map((item) => (
                   <li key={item.title}>
-                    <Link href={item.path}>{item.title}</Link>
+                    <a
+                      href={item.path}
+                      rel="noreferrer"
+                      target="_blank"
+                      className="flex justify-start items-center gap-2"
+                    >
+                      <span
+                        className={` text-[19px] text-white/90 dark:text-neutral-400`}
+                      >
+                        {item.icon}
+                      </span>
+                      <p>{item.title}</p>
+                    </a>
                   </li>
                 ))
               ) : (

@@ -19,12 +19,10 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex h-full w-full flex-col gap-10">
       <HeroSection />
       <NewCollection />
       <WearToWedding />
-      {/* <AllCollection /> */}
-      {/* <ThreeItemGrid /> */}
       <Carousel />
       <Footer />
     </section>

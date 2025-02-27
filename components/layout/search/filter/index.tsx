@@ -1,7 +1,7 @@
-import { SortFilterItem } from "lib/constants"
+import { SortFilterItem } from "@/lib/constants"
 import { Suspense } from "react"
 import FilterItemDropdown from "./dropdown"
-import { FilterItem } from "./item"
+// import { FilterItem } from "./item"
 import { ShopifyCollection } from "@/lib/shopify/types"
 import Link from "next/link"
 import Image from "next/image"
@@ -10,7 +10,7 @@ import allCollectionsImage from "@/public/images/all_collections.webp"
 export type ListItem = SortFilterItem | PathFilterItem
 export type PathFilterItem = { title: string; path: string }
 
-function FilterItemList({ list }: { list: ListItem[] }) {
+function FilterItemList({ list }: { list: ShopifyCollection[] }) {
   return (
     <>
       {list.map((item: ShopifyCollection) => (
@@ -20,7 +20,7 @@ function FilterItemList({ list }: { list: ListItem[] }) {
           prefetch={true}
           className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
         >
-          <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-primary">
+          <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-black dark:group-hover:ring-white">
             <Image
               src={item?.image?.url || allCollectionsImage}
               alt={item.title}
@@ -28,7 +28,7 @@ function FilterItemList({ list }: { list: ListItem[] }) {
               className="object-cover"
             />
           </div>
-          <span className="text-sm text-gray-300 transition-colors group-hover:text-white">
+          <span className="text-sm text-black/90 dark: dark:text-neutral-400  font-medium transition-colors group-hover:text-white">
             {item.title}
           </span>
         </Link>

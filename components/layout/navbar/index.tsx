@@ -2,6 +2,7 @@ import CartModal from "@/components/cart/modal"
 // import LogoSquare from "@/components/logo-square"
 import Image from "next/image"
 import logo from "@/public/images/logo.png"
+import whiteLogo from "@/public/images/logo_white.png"
 import { Menu } from "@/lib/shopify/types"
 import Link from "next/link"
 import { Suspense } from "react"
@@ -49,11 +50,24 @@ export async function Navbar() {
           <Link
             href="/"
             prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
+            className="mr-2 flex w-full dark:hidden items-center justify-center md:w-auto lg:mr-6"
           >
             {/* <LogoSquare /> */}
             <Image
               src={logo}
+              alt="phosua details logo"
+              width={150}
+              height={120}
+            />
+          </Link>
+          <Link
+            href="/"
+            prefetch={true}
+            className="mr-2 hidden dark:flex w-full items-center justify-center md:w-auto lg:mr-6"
+          >
+            {/* <LogoSquare /> */}
+            <Image
+              src={whiteLogo}
               alt="phosua details logo"
               width={150}
               height={120}

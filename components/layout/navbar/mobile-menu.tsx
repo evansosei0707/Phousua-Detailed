@@ -79,7 +79,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                     <Search inputClassName="w-full py-1" />
                   </Suspense>
                 </div>
-                <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500 md:block dark:text-neutral-400">
+                <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-gray-500  dark:text-white/90 md:block dark:text-neutral-400">
                   Collections
                 </h3>
 
@@ -90,7 +90,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                     prefetch={true}
                     className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
                   >
-                    <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-primary">
+                    <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-black dark:group-hover:ring-white">
                       <Image
                         src={item?.image?.url || allCollectionsImage}
                         alt={item.title}
@@ -98,7 +98,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-secondary font-medium text-lg transition-colors group-hover:text-white">
+                    <span className="text-secondary dark:text-white/90 font-medium text-lg transition-colors group-hover:text-white">
                       {item.title}
                     </span>
                   </Link>

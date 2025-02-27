@@ -51,6 +51,7 @@ export type Menu = {
   title: string
   path: string
   icon?: React.ReactNode
+  color?: string
 }
 
 export type Money = {

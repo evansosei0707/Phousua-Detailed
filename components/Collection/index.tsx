@@ -22,7 +22,7 @@ const NewCollection = async () => {
         </p>
       </div>
       {products.length > 0 ? (
-        <Grid className="grid-cols-1 mt-3 w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Grid className="grid-cols-1 h-full  mt-3 w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ProductGridItems products={products} />
         </Grid>
       ) : null}
