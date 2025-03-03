@@ -98,7 +98,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                         className="object-cover"
                       />
                     </div>
-                    <span className="text-secondary dark:text-white/90 font-medium text-lg transition-colors group-hover:text-white">
+                    <span className="text-secondary dark:text-white/90 font-medium text-lg transition-colors ">
                       {item.title}
                     </span>
                   </Link>

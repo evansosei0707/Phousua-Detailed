@@ -4,8 +4,9 @@ import { WelcomeToast } from "@/components/welcome-toast"
 import { getCart } from "@/lib/shopify"
 import { baseUrl } from "@/lib/utils"
 import { ReactNode } from "react"
-import { Toaster } from "sonner"
+// import { Toaster } from "sonner"
 import { Poppins } from "next/font/google"
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 
 const poppins = Poppins({

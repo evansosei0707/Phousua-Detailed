@@ -32,57 +32,62 @@ export default function ContactPage() {
         <div className=" mx-auto max-w-6xl">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Contact Information */}
-            <div className="rounded-lg border bg-card p-6 shadow-sm lg:col-span-2">
+            <div className="rounded-lg border p-2 lg:p-4 shadow-sm lg:col-span-2">
               <h2 className="mb-6 text-2xl font-semibold">
                 Contact Information
               </h2>
               <div className="grid gap-6">
                 <div className="flex items-start gap-4">
-                  <Phone className="mt-1 h-5 w-5 text-primary" />
+                  <Phone className="mt-1 min-h-5 flex-shrink-0  min-w-5 text-primary" />
                   <div>
                     <p className="font-medium">Phone</p>
                     <p className="text-muted-foreground">
-                      Main: +233 24 305 8348
+                      Main: : +233-(0)-277103031
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Mail className="mt-1 h-5 w-5 text-primary" />
+                <div className="flex items-start flex-shrink-0 gap-4">
+                  <Mail className="mt-1 min-h-5 flex-shrink-0  min-w-5 text-primary" />
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">
-                      General: info@yourstore.com
+                      General: phosuadetailed@gmail.com
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="mt-1 h-5 w-5 text-primary" />
+                  <MapPin className="mt-1 min-h-5 flex-shrink-0  min-w-5 text-primary" />
                   <div>
                     <p className="font-medium">Location</p>
                     <p className="text-muted-foreground">
-                      Accra, North Legon
-                      <br />
+                      First Floor, Georges Plaza, North Legon, Greater Accra,
+                      Ghana
+                      <br className=" bg-slate-300" />
                       Ghana
                     </p>
                   </div>
                 </div>
                 <div className="my-6 h-px bg-border" />
-                <div className="flex items-start gap-4">
+                <div className="flex max-sm:flex-col max-sm:items-start max-sm:justify-center items-start gap-4">
                   <Clock className="mt-1 h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">Business Hours</p>
                     <div className="grid gap-2 text-muted-foreground">
                       <div className="flex justify-between gap-8">
-                        <p>Monday - Friday:</p>
-                        <p>9:00 AM - 8:00 PM EST</p>
+                        <p>Tuesday - Friday:</p>
+                        <p>10:00 AM GMT - 7:00 PM GMT</p>
                       </div>
                       <div className="flex justify-between gap-8">
                         <p>Saturday:</p>
-                        <p>10:00 AM - 6:00 PM EST</p>
+                        <p>9:00 AM GMT - 8:00 PM GMT</p>
                       </div>
                       <div className="flex justify-between gap-8">
                         <p>Sunday:</p>
-                        <p>11:00 AM - 5:00 PM EST</p>
+                        <p>closed</p>
+                      </div>
+                      <div className="flex justify-between gap-8">
+                        <p>Monday:</p>
+                        <p>closed</p>
                       </div>
                     </div>
                   </div>
@@ -91,7 +96,7 @@ export default function ContactPage() {
             </div>
 
             {/* Quick Links & Social */}
-            <div className="rounded-lg border bg-card p-6 shadow-sm">
+            <div className="rounded-lg border p-2 lg:p-4 shadow-sm">
               <h2 className="mb-6 text-2xl font-semibold">Quick Links</h2>
               <div className="grid gap-4">
                 <div>
@@ -146,7 +151,7 @@ export default function ContactPage() {
                         href={link.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full bg-muted p-2 text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                        className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                       >
                         <span className="text-2xl">{link.icon}</span>
                         <span className="sr-only">{link.title}</span>

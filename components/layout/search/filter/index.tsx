@@ -28,7 +28,7 @@ function FilterItemList({ list }: { list: ShopifyCollection[] }) {
               className="object-cover"
             />
           </div>
-          <span className="text-sm text-black/90 dark: dark:text-neutral-400  font-medium transition-colors group-hover:text-white">
+          <span className="text-sm text-black/90 dark: dark:text-neutral-400   font-medium transition-colors ">
             {item.title}
           </span>
         </Link>

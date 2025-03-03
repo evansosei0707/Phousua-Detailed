@@ -76,7 +76,7 @@ export default async function Footer() {
             href="/"
           >
             <LogoSquare size="sm" />
-            <span className="uppercase">{SITE_NAME}</span>
+            <span className="uppercase font-semibold">{SITE_NAME}</span>
           </Link>
           <p className=" w-[50%] max-sm:w-full">
             Phosua Detailed is your number one stop for quality and affordable
@@ -157,7 +157,7 @@ export default async function Footer() {
                       className="flex justify-start items-center gap-2"
                     >
                       <span
-                        className={` text-[19px] text-white/90 dark:text-neutral-400`}
+                        className={` text-[19px] text-black dark:text-white`}
                       >
                         {item.icon}
                       </span>
