@@ -11,6 +11,7 @@ import { getProduct, getProductRecommendations } from "@/lib/shopify"
 import { mediaImage } from "@/lib/shopify/types"
 import Link from "next/link"
 import { Suspense } from "react"
+import generateOpenGraphImage from "@/app/opengraph-image"
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>
@@ -22,6 +23,12 @@ export async function generateMetadata(props: {
 
   const { url, width, height, altText: alt } = product.featuredImage || {}
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG)
+
+  await generateOpenGraphImage({
+    title: product.title,
+    description: product.description,
+    imageUrl: url,
+  })
 
   return {
     title: product.seo.title || product.title,

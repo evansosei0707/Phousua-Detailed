@@ -29,6 +29,10 @@ const quickLinks: Menu[] = [
     title: "Store",
     path: "/search",
   },
+  {
+    title: "Book appointment",
+    path: "/appointment",
+  },
 ]
 
 export const socialLinks: Menu[] = [

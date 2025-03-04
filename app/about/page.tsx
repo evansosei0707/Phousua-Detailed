@@ -4,6 +4,24 @@ import heroImage from "@/public/images/aboutHero.jpeg"
 import ourStory from "@/public/images/our_story.png"
 import Link from "next/link"
 import { socialLinks } from "@/components/layout/footer"
+import generateOpenGraphImage from "@/app/opengraph-image"
+import { Metadata } from "next"
+
+generateOpenGraphImage({
+  title: "Contact Us - Phosua Detailed",
+  description: "What is new in the latest version of our code snippet!",
+  imageUrl:
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
+})
+
+export const metadata: Metadata = {
+  title: "Phosua Detailed",
+  description:
+    "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
+  openGraph: {
+    type: "website",
+  },
+}
 
 // Define reusable data arrays
 const statisticsData = [

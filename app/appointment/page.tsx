@@ -8,6 +8,14 @@ import customMadeImg from "@/public/images/custom-made.webp"
 import measureImg from "@/public/images/measure-session.jpg"
 import stylingImg from "@/public/images/styling-session.jpg"
 import NewAppointmentForm from "@/components/appointment/newAppointmentForm"
+import generateOpenGraphImage from "@/app/opengraph-image"
+
+generateOpenGraphImage({
+  title: "Book an Appointment - Phosua Detailed",
+  description: "What is new in the latest version of our code snippet!",
+  imageUrl:
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
+})
 
 export const metadata: Metadata = {
   title: "Book an Appointment | Fashion Studio",

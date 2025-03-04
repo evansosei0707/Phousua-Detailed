@@ -5,6 +5,8 @@ import { notFound } from "next/navigation"
 import Grid from "@/components/grid"
 import ProductGridItems from "@/components/layout/product-grid-items"
 import { defaultSort, sorting } from "@/lib/constants"
+import generateOpenGraphImage from "@/app/opengraph-image"
+// import generateOpenGraphImage from "@/app/opengraph-image"
 
 export async function generateMetadata(props: {
   params: Promise<{ collection: string }>
@@ -13,6 +15,16 @@ export async function generateMetadata(props: {
   const collection = await getCollection(params.collection)
 
   if (!collection) return notFound()
+
+  const { title, description } = collection
+
+  await generateOpenGraphImage({
+    title: title,
+    description: description || `${collection.title} collection`,
+    imageUrl: collection?.image?.url,
+  })
+
+  // console.log("Single Collection:", collection)
 
   return {
     title: collection.seo?.title || collection.title,

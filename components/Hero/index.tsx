@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import heroImage from "@/public/images/hero_image.png"
+import heroImage from "@/public/images/LADIES WITH SHOPPING BAGS.jpg"
 import Link from "next/link"
 
 const HeroSection = () => {

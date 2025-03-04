@@ -1,8 +1,27 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import contactHero from "@/public/images/contact_hero.jpeg"
 import { socialLinks } from "@/components/layout/footer"
+import generateOpenGraphImage from "@/app/opengraph-image"
+
+generateOpenGraphImage({
+  title: "About Us - Phosua Detailed",
+  description: "What is new in the latest version of our code snippet!",
+  imageUrl:
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
+})
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
+  openGraph: {
+    type: "website",
+  },
+}
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">

@@ -104,6 +104,13 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                   </Link>
                 ))}
               </div>
+              <Link
+                href="/appointment"
+                prefetch={true}
+                className=" w-[90%] mx-auto rounded-full p-3 text-center font-semibold bg-black text-white dark:bg-white mt-auto dark:text-black "
+              >
+                Book Appointment
+              </Link>
             </Dialog.Panel>
           </Transition.Child>
         </Dialog>
