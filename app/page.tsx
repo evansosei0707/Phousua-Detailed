@@ -1,6 +1,7 @@
 // import { Carousel } from "components/carousel"
 // import { ThreeItemGrid } from "components/grid/three-items"
 // import Footer from "components/layout/footer"
+import AppointmentCallToAction from "@/components/appointment/appointmentCallToAction"
 import { Carousel } from "@/components/carousel"
 import NewCollection from "@/components/Collection"
 // import AllCollection from "@/components/Collection/AllCollection"
@@ -24,6 +25,7 @@ export default function HomePage() {
       <NewCollection />
       <WearToWedding />
       <Carousel />
+      <AppointmentCallToAction />
       <Footer />
     </section>
   )
