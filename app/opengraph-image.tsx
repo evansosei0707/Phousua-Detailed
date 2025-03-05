@@ -6,16 +6,26 @@ import fs from "fs"
 import path from "path"
 
 async function loadFont(fontPath: string) {
-  // Use an absolute path to ensure consistency
-  const fullPath = path.resolve(process.cwd(), fontPath)
+  const fullPath = path.resolve(process.cwd(), "public", fontPath)
 
   try {
-    // Check if file exists before reading
-    await fs.promises.access(fullPath)
-    return fs.promises.readFile(fullPath)
+    const fontBuffer = await fs.promises.readFile(fullPath)
+    if (fontBuffer.length === 0) {
+      throw new Error(`Empty font file: ${fullPath}`)
+    }
+    return fontBuffer
   } catch (error) {
-    console.error(`Font file not found: ${fullPath}`)
-    throw error
+    console.error(`Font file not found or unreadable: ${fullPath}`)
+    console.error(error)
+
+    // Fallback to fetch
+    try {
+      const response = await fetch(`/${fontPath}`)
+      return await response.arrayBuffer()
+    } catch (fetchError) {
+      console.error(`Failed to fetch font: ${fontPath}`, fetchError)
+      throw fetchError
+    }
   }
 }
 
