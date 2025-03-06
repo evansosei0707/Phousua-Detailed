@@ -21,7 +21,7 @@ export async function generateMetadata(props: {
   await generateOpenGraphImage({
     title: title,
     description: description || `${collection.title} collection`,
-    imageUrl: collection?.image?.url,
+    imageUrl: collection.image.url,
   })
 
   // console.log("Single Collection:", collection)

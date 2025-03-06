@@ -202,7 +202,7 @@ export default async function Footer() {
           <div className="flex max-sm:mt-2 flex-col md:ml-auto justify-center md:flex-row items-center lg:gap-6 gap-2">
             <p>
               <Link
-                href="/privacy-policy"
+                href="/terms-conditions"
                 className="text-black dark:text-white"
               >
                 Terms & Conditions

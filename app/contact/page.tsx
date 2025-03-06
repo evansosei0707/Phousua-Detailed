@@ -10,11 +10,11 @@ generateOpenGraphImage({
   title: "About Us - Phosua Detailed",
   description: "What is new in the latest version of our code snippet!",
   imageUrl:
-    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png",
 })
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us - Phosua Detailed",
   description:
     "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
   openGraph: {

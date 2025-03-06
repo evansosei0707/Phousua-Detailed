@@ -8,6 +8,7 @@ import { ReactNode } from "react"
 import { Poppins } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
+import generateOpenGraphImage from "./opengraph-image"
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -16,6 +17,13 @@ const poppins = Poppins({
 })
 
 const { SITE_NAME } = process.env
+
+generateOpenGraphImage({
+  title: "Phosua Detailed",
+  description: "What is new in the latest version of our code snippet!",
+  imageUrl:
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png",
+})
 
 export const metadata = {
   metadataBase: new URL(baseUrl),

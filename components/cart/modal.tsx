@@ -250,7 +250,11 @@ function CheckoutButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-white" /> : "Proceed to Checkout"}
+      {pending ? (
+        <LoadingDots className="bg-white dark:bg-black" />
+      ) : (
+        "Proceed to Checkout"
+      )}
     </button>
   )
 }

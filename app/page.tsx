@@ -9,25 +9,7 @@ import NewCollection from "@/components/Collection"
 import HeroSection from "@/components/Hero"
 import Footer from "@/components/layout/footer"
 // import generateOpenGraphImage from "@/components/opengraph-image"
-import generateOpenGraphImage from "./opengraph-image"
 import WearToWedding from "@/components/Wedding"
-import { Metadata } from "next"
-
-generateOpenGraphImage({
-  title: "Phosua Detailed",
-  description: "What is new in the latest version of our code snippet!",
-  imageUrl:
-    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
-})
-
-export const metadata: Metadata = {
-  title: "Phosua Detailed",
-  description:
-    "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
-  openGraph: {
-    type: "website",
-  },
-}
 
 export default function HomePage() {
   return (

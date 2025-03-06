@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next"
 // import AppointmentForm from "./appointment-form"
 // import AppointmentForm from "@/components/appointment/appointment-form"
@@ -14,7 +13,7 @@ generateOpenGraphImage({
   title: "Book an Appointment - Phosua Detailed",
   description: "What is new in the latest version of our code snippet!",
   imageUrl:
-    "https://res.cloudinary.com/drsjfyody/image/upload/v1741119930/open_graph_real_qxy7yi.png",
+    "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png",
 })
 
 export const metadata: Metadata = {
