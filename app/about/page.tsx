@@ -7,20 +7,34 @@ import { socialLinks } from "@/components/layout/footer"
 import generateOpenGraphImage from "@/app/opengraph-image"
 import { Metadata } from "next"
 
+const url =
+  "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png"
+const width = 1200
+const height = 630
+const alt = "Featured"
+
 generateOpenGraphImage({
-  title: "Contact Us - Phosua Detailed",
+  title: "About Us - Phosua Detailed",
   description: "What is new in the latest version of our code snippet!",
-  imageUrl:
-    "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png",
+  imageUrl: url,
 })
 
 export const metadata: Metadata = {
-  title: "Contact Us - Phosua Detailed",
+  title: "About Us - Phosua Detailed",
   description:
     "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
-  openGraph: {
-    type: "website",
-  },
+  openGraph: url
+    ? {
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt,
+          },
+        ],
+      }
+    : null,
 }
 
 // Define reusable data arrays

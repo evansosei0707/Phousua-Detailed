@@ -18,11 +18,16 @@ const poppins = Poppins({
 
 const { SITE_NAME } = process.env
 
+const url =
+  "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png"
+const width = 1200
+const height = 630
+const alt = "Featured"
+
 generateOpenGraphImage({
   title: "Phosua Detailed",
   description: "What is new in the latest version of our code snippet!",
-  imageUrl:
-    "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png",
+  imageUrl: url,
 })
 
 export const metadata = {
@@ -35,6 +40,18 @@ export const metadata = {
     follow: true,
     index: true,
   },
+  openGraph: url
+    ? {
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt,
+          },
+        ],
+      }
+    : null,
 }
 
 export default async function RootLayout({
