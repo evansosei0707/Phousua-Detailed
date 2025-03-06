@@ -8,8 +8,40 @@ import NewCollection from "@/components/Collection"
 // import { ThreeItemGrid } from "@/components/grid/three-items"
 import HeroSection from "@/components/Hero"
 import Footer from "@/components/layout/footer"
-// import generateOpenGraphImage from "@/components/opengraph-image"
 import WearToWedding from "@/components/Wedding"
+import { Metadata } from "next"
+import generateOpenGraphImage from "./opengraph-image"
+
+const url =
+  "https://res.cloudinary.com/drsjfyody/image/upload/v1741238606/home_open_graph_hpm2jt.png"
+const width = 1200
+const height = 630
+const alt = "Featured"
+
+generateOpenGraphImage({
+  title: "Phosua Detailed",
+  description:
+    "Phosua Detailed, Women's apparel and accessories, made in Ghana, West Africa.",
+  imageUrl: url,
+})
+
+export const metadata: Metadata = {
+  title: "Book an Appointment | Fashion Studio",
+  description:
+    "Schedule a personalized appointment for custom clothing, measurements, or styling sessions.",
+  openGraph: url
+    ? {
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt,
+          },
+        ],
+      }
+    : null,
+}
 
 export default function HomePage() {
   return (
