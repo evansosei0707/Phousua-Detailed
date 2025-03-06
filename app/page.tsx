@@ -28,7 +28,7 @@ generateOpenGraphImage({
 export const metadata: Metadata = {
   title: "Book an Appointment | Fashion Studio",
   description:
-    "Schedule a personalized appointment for custom clothing, measurements, or styling sessions.",
+    "Phosua Detailed, Women's apparel and accessories, made in Ghana, West Africa.",
   openGraph: url
     ? {
         images: [
