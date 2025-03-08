@@ -14,7 +14,7 @@ const NewCollection = async () => {
     <div className="lg:mt-10 flex flex-col items-center w-full justify-center gap-4 mx-auto py-10">
       <div className=" flex flex-col max-sm:items-start justify-center gap-2 items-center lg:gap-3">
         <h2 className=" text-[30px] md:text-[40px]  lg:text-[55px] font-semibold uppercase">
-          New Collection
+          Latest Collection
         </h2>
         <p className="text-secondary/60 dark:text-secondary md:text-lg">
           Our latest collection, where classic and contemporary converge in

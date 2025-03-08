@@ -12,7 +12,6 @@ export const sendAppointmentEmail = async (
   date: string,
   to: string
 ) => {
-  console.log(name)
   try {
     // Convert your custom component into raw HTML
     const html = await render(
@@ -41,7 +40,6 @@ export const sendAdminEmailAlert = async (
   phone: string,
   to: string
 ) => {
-  console.log(name)
   try {
     // Convert your custom component into raw HTML
     const adminHtml = await render(

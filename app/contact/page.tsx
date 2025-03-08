@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">
-                      General: phosuadetailed@gmail.com
+                      General: info@phosuadetailed.com
                     </p>
                   </div>
                 </div>
@@ -116,11 +116,11 @@ export default function ContactPage() {
                       </div>
                       <div className="flex justify-between gap-8">
                         <p>Sunday:</p>
-                        <p>closed</p>
+                        <p>Closed</p>
                       </div>
                       <div className="flex justify-between gap-8">
                         <p>Monday:</p>
-                        <p>closed</p>
+                        <p>Closed</p>
                       </div>
                     </div>
                   </div>

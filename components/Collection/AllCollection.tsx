@@ -29,7 +29,7 @@ export default function AllCollection({
             className="object-cover rounded-2xl object-top"
           />
         </Link>
-        <div className="absolute bottom-0 flex flex-col gap-4 left-0  p-4">
+        <div className="absolute bottom-0 left-0 w-full flex flex-col gap-4 p-4 bg-gradient-to-t from-black/50 to-transparent rounded-2xl overflow-hidden">
           <h3 className="text-white text-3xl uppercase font-semibold">
             {collection.title}
           </h3>

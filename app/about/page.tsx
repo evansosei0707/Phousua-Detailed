@@ -100,14 +100,6 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/60" />{" "}
         {/* Increased overlay opacity for better text readability */}
         <div className="container relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
-          <h1 className="mb-4 md:mb-6 text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Crafting Sustainable Style
-          </h1>
-          <p className="mb-6 md:mb-8 max-w-2xl text-base md:text-xl text-gray-100">
-            We believe in fashion that looks good, feels good, and does good.
-            Our commitment to sustainable practices and timeless design creates
-            clothing that you&apos;ll love for years to come.
-          </p>
           <Link
             href="/search"
             prefetch={true}

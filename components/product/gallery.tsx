@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
 import { GridTileImage } from "@/components/grid/tile"
 import { useProduct, useUpdateURL } from "@/components/product/product-context"
 import Image from "next/image"
+import WishlistButton from "@/components/wishlist/wishlist-button"
 
 export function Gallery({
   images,
+  product,
 }: {
   images: { src: string; altText: string }[]
+  product: any
 }) {
   const { state, updateImage } = useProduct()
   const updateURL = useUpdateURL()
@@ -34,6 +38,14 @@ export function Gallery({
             priority={true}
           />
         )}
+
+        {/* Wishlist button positioned in the top right corner */}
+        <div className="absolute top-4 right-4 z-10">
+          <WishlistButton
+            product={product}
+            className="bg-white/80 hover:bg-white p-2 rounded-full"
+          />
+        </div>
 
         {images.length > 1 ? (
           <div className="absolute hidden lg:flex bottom-0 md:bottom-[10%] w-full justify-center">
@@ -65,7 +77,7 @@ export function Gallery({
       </div>
 
       {images.length > 1 ? (
-        <ul className=" mt-2 flex items-center flex-wrap justify-center gap-2 overflow-auto py-1 lg:mb-0">
+        <ul className="mt-2 flex items-center flex-wrap justify-center gap-2 overflow-auto py-1 lg:mb-0">
           {images.map((image, index) => {
             const isActive = index === imageIndex
 

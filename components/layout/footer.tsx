@@ -4,11 +4,12 @@ import FooterMenu from "@/components/layout/footer-menu"
 import LogoSquare from "@/components/logo-square"
 // import { getMenu } from "@/lib/shopify"
 import { Suspense } from "react"
-import { menu } from "./navbar"
-import { Menu } from "@/lib/shopify/types"
+import { navLinks } from "./navbar"
+import { Collection, Menu } from "@/lib/shopify/types"
 import { IoLogoWhatsapp } from "react-icons/io5"
 import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
+import { getCollections } from "@/lib/shopify"
 
 const { COMPANY_NAME, SITE_NAME } = process.env
 
@@ -22,12 +23,16 @@ const quickLinks: Menu[] = [
     path: "/about",
   },
   {
-    title: "contact Us",
+    title: "Contact Us",
     path: "/contact",
   },
   {
-    title: "Store",
+    title: "Shop",
     path: "/search",
+  },
+  {
+    title: "Wishlist",
+    path: "/wishlist",
   },
   {
     title: "Book appointment",
@@ -71,10 +76,16 @@ export default async function Footer() {
   // const menu = await getMenu("home-page-feature")
   const copyrightName = COMPANY_NAME || SITE_NAME || ""
 
+  const collections = await getCollections()
+
+  const collectionsData = collections.filter(
+    (collection) => collection.handle !== "home-page-featured"
+  )
+
   return (
     <footer className="text-sm w-full text-neutral-500 dark:text-neutral-400">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 py-12 text-sm md:flex-row md:items-start md:justify-between md:gap-12 min-[1320px]:px-0 dark:border-neutral-700">
-        <div className="flex flex-col items-start gap-6">
+        <div className="flex flex-col lg:w-[40%] items-start gap-6">
           <Link
             className="flex items-center gap-2 text-black md:pt-1 dark:text-white"
             href="/"
@@ -82,9 +93,10 @@ export default async function Footer() {
             <LogoSquare size="sm" />
             <span className="uppercase font-semibold">{SITE_NAME}</span>
           </Link>
-          <p className=" w-[50%] max-sm:w-full">
-            Phosua Detailed is your number one stop for quality and affordable
-            african, bridal and special occasion clothing.
+          <p className=" w-[75%] max-sm:w-full">
+            Phosua Detailed, founded in Ghana in 2018, is a women’s apparel
+            brand with an aim to create unique, exquisitely detailed, and
+            timeless pieces for the modern woman.
           </p>
         </div>
         <div className="flex flex-col justify-start md:w-[90%] lg:w-[60%] items-start gap-12 lg:flex-row lg:items-start lg:justify-between">
@@ -112,7 +124,7 @@ export default async function Footer() {
                     </div>
                   }
                 >
-                  <FooterMenu menu={menu} />
+                  <FooterMenu menu={navLinks} />
                 </Suspense>
               )}
             </ul>
@@ -122,9 +134,9 @@ export default async function Footer() {
               Collections
             </h3>
             <ul className="flex flex-col items-start gap-1">
-              {menu ? (
-                menu.map((item) => (
-                  <li key={item.title}>
+              {collectionsData ? (
+                collectionsData.map((item: Collection) => (
+                  <li key={item.handle}>
                     <Link href={item.path}>{item.title}</Link>
                   </li>
                 ))
@@ -141,7 +153,7 @@ export default async function Footer() {
                     </div>
                   }
                 >
-                  <FooterMenu menu={menu} />
+                  <FooterMenu menu={collectionsData} />
                 </Suspense>
               )}
             </ul>
@@ -182,7 +194,7 @@ export default async function Footer() {
                     </div>
                   }
                 >
-                  <FooterMenu menu={menu} />
+                  <FooterMenu menu={navLinks} />
                 </Suspense>
               )}
             </ul>
@@ -202,7 +214,26 @@ export default async function Footer() {
           <div className="flex max-sm:mt-2 flex-col md:ml-auto justify-center md:flex-row items-center lg:gap-6 gap-2">
             <p>
               <Link
+                href="/shipping"
+                prefetch={true}
+                className="text-black dark:text-white"
+              >
+                Shipping
+              </Link>
+            </p>
+            <p>
+              <Link
+                href="/returns"
+                prefetch={true}
+                className="text-black dark:text-white"
+              >
+                Returns & Exchange
+              </Link>
+            </p>
+            <p>
+              <Link
                 href="/terms-conditions"
+                prefetch={true}
                 className="text-black dark:text-white"
               >
                 Terms & Conditions
@@ -210,6 +241,7 @@ export default async function Footer() {
             </p>
             <p>
               <Link
+                prefetch={true}
                 href="/privacy-policy"
                 className="text-black dark:text-white"
               >

@@ -30,8 +30,6 @@ export default function NewAppointmentForm() {
   const [formState, setFormState] = useState<FormState>({ status: "idle" })
   const [selectedDate, setSelectedDate] = useState<Date | undefined>()
 
-  console.log(formState)
-
   // Generate time slots from 12 PM to 6 PM
   const timeSlots = Array.from({ length: 13 }, (_, i) => {
     const hour = Math.floor(i / 2) + 12 // Start at 12 PM
@@ -145,9 +143,9 @@ export default function NewAppointmentForm() {
               <SelectValue placeholder="Select appointment type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="custom-made">Custom-made</SelectItem>
-              <SelectItem value="measurement">Measurement</SelectItem>
-              <SelectItem value="styling">Styling Session</SelectItem>
+              <SelectItem value="custom-made">Kente</SelectItem>
+              <SelectItem value="measurement">Bridal</SelectItem>
+              <SelectItem value="styling">Custom made outfits</SelectItem>
             </SelectContent>
           </Select>
           {formState.status === "error" && formState.errors?.type && (
@@ -237,7 +235,12 @@ export default function NewAppointmentForm() {
         />
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex justify-between w-full items-center">
+        <p className="text-sm text-gray-500 max-w-[60%]">
+          <span className=" text-white font-medium">Please note:</span> Booking
+          an appointment may incur a service fee. Kindly review the terms and
+          conditions for further details.
+        </p>
         <Button
           type="submit"
           className="w-full md:w-auto"

@@ -9,6 +9,7 @@ import { Poppins } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 import generateOpenGraphImage from "./opengraph-image"
+import NewsletterWrapper from "@/components/Collection/Newsletter/NewsletterWrapper"
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -74,6 +75,7 @@ export default async function RootLayout({
           </main>
           {/* <Footer /> */}
         </CartProvider>
+        <NewsletterWrapper />
       </body>
     </html>
   )

@@ -9,24 +9,21 @@ import { Suspense } from "react"
 import MobileMenu from "./mobile-menu"
 import Search, { SearchSkeleton } from "./search"
 import { getCollections } from "@/lib/shopify"
+import WishlistIcon from "@/components/wishlist/wishlist-icon"
 
 // const { SITE_NAME } = process.env
-export const menu: Menu[] = [
+export const navLinks: Menu[] = [
   {
-    title: "All",
+    title: "Shop",
     path: "/search",
   },
   {
-    title: "Kente",
-    path: "/search/kente",
+    title: "Collections",
+    path: "/collections",
   },
   {
-    title: "Bridal",
-    path: "/search/bridal",
-  },
-  {
-    title: "Ready to wear",
-    path: "/search/ready-to-wear",
+    title: "Book appointment",
+    path: "/appointment",
   },
 ]
 
@@ -46,7 +43,7 @@ export async function Navbar() {
         </Suspense>
       </div>
       <div className="flex w-full items-center">
-        <div className="flex w-full  mr-7 md:w-1/3">
+        <div className="flex w-full mr-7 md:w-2/3">
           <Link
             href="/"
             prefetch={true}
@@ -73,19 +70,9 @@ export async function Navbar() {
               height={120}
             />
           </Link>
-          {/* <Link
-            href="/"
-            prefetch={true}
-            className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
-          >
-            <LogoSquare />
-            <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-              {SITE_NAME}
-            </div>
-          </Link> */}
-          {menu.length ? (
+          {navLinks.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
-              {menu.map((item: Menu) => (
+              {navLinks.map((item: Menu) => (
                 <li key={item.title}>
                   <Link
                     href={item.path}
@@ -99,12 +86,15 @@ export async function Navbar() {
             </ul>
           ) : null}
         </div>
-        <div className="hidden justify-center md:flex md:w-3/5">
+        <div className="hidden justify-center md:flex md:w-2/5">
           <Suspense fallback={<SearchSkeleton />}>
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end md:w-[100px]">
+        <div className="flex justify-end items-center gap-4 md:w-[200px]">
+          <Suspense fallback={null}>
+            <WishlistIcon />
+          </Suspense>
           <CartModal />
         </div>
       </div>

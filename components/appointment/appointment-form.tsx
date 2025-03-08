@@ -80,7 +80,7 @@ async function createAppointment(
     const data = appointmentSchema.parse(rawData)
 
     // Here you would typically save the appointment to your database
-    console.log("Appointment created:", data)
+    // console.log("Appointment created:", data)
 
     // Return success
     return {
