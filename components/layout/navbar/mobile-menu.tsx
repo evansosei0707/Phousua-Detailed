@@ -12,7 +12,13 @@ import { ShopifyCollection } from "@/lib/shopify/types"
 import Image from "next/image"
 import allCollectionsImage from "@/public/images/all_collections.webp"
 
-export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
+export default function MobileMenu({
+  menu,
+  categories,
+}: {
+  menu: ShopifyCollection[]
+  categories: ShopifyCollection[]
+}) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
@@ -43,7 +49,10 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
         <Bars3Icon className="h-4" />
       </button>
       <Transition show={isOpen}>
-        <Dialog onClose={closeMobileMenu} className="relative z-50">
+        <Dialog
+          onClose={closeMobileMenu}
+          className="relative h-full overflow-y-scroll z-50"
+        >
           <Transition.Child
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
@@ -64,7 +73,7 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[-100%]"
           >
-            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full w-full flex-col bg-white pb-6 dark:bg-black">
+            <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-0 flex h-full overflow-y-scroll w-full flex-col bg-white pb-6 dark:bg-black">
               <div className="p-4">
                 <button
                   className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white"
@@ -84,6 +93,30 @@ export default function MobileMenu({ menu }: { menu: ShopifyCollection[] }) {
                 </h3>
 
                 {menu.map((item: ShopifyCollection) => (
+                  <Link
+                    key={item.handle}
+                    href={item.path}
+                    prefetch={true}
+                    className="group flex items-center gap-3 rounded-lg p-2 transition-all hover:translate-x-1"
+                  >
+                    <div className="relative h-10 w-10 overflow-hidden whitespace-nowrap shrink-0 rounded-full ring-2 ring-transparent transition-all group-hover:ring-black dark:group-hover:ring-white">
+                      <Image
+                        src={item?.image?.url || allCollectionsImage}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="text-secondary dark:text-white/90 font-medium text-lg transition-colors ">
+                      {item.title}
+                    </span>
+                  </Link>
+                ))}
+                <h3 className="mb-4 text-sm font-medium uppercase mt-8 tracking-wider text-gray-500  dark:text-white/90 md:block dark:text-neutral-400">
+                  Categories
+                </h3>
+
+                {categories.map((item: ShopifyCollection) => (
                   <Link
                     key={item.handle}
                     href={item.path}

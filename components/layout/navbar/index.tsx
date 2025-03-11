@@ -254,7 +254,7 @@ export async function Navbar() {
       <nav className="relative flex items-center py-5 justify-between">
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>
-            <MobileMenu menu={menu} />
+            <MobileMenu categories={categories} menu={menu} />
           </Suspense>
         </div>
         <div className="flex w-full items-center">
