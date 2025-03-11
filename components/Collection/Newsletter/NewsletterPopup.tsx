@@ -3,7 +3,8 @@
 import Image from "next/image"
 // components/NewsletterPopup.tsx
 import { useState, useEffect, FormEvent, ChangeEvent } from "react"
-import newsletterImage from "@/public/images/custom-made.webp"
+// import newsletterImage from "@/public/images/custom-made.webp"
+import newsletterImage from "@/public/images/newsletter_image.png"
 
 const NewsletterPopup: React.FC = () => {
   const [email, setEmail] = useState<string>("")

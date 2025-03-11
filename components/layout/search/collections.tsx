@@ -8,7 +8,13 @@ async function CollectionList() {
   const collections = await getCollections()
 
   const filteredCollections = collections.filter(
-    (collection) => collection.handle !== "home-page-featured"
+    (collection) =>
+      collection.handle !== "home-page-featured" &&
+      collection.handle !== "blouse" &&
+      collection.handle !== "two-pieces" &&
+      collection.handle !== "dress" &&
+      collection.handle !== "skirt" &&
+      collection.handle !== ""
   )
   return <FilterList list={filteredCollections} title="Collections" />
 }

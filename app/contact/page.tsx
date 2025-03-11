@@ -139,7 +139,7 @@ export default function ContactPage() {
                     <Link
                       href="/about"
                       prefetch={true}
-                      className="text-primary hover:underline"
+                      className="text-black dark:text-white hover:underline"
                     >
                       about us
                     </Link>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     <Link
                       href="/privacy-policy"
                       prefetch={true}
-                      className="text-primary hover:underline"
+                      className="text-black dark:text-white hover:underline"
                     >
                       shipping policies
                     </Link>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                     <Link
                       href="/privacy-policy"
                       prefetch={true}
-                      className="text-primary hover:underline"
+                      className="text-black dark:text-white hover:underline"
                     >
                       return policy
                     </Link>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                         href={link.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                        className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-black hover:text-primary-foreground"
                       >
                         <span className="text-2xl">{link.icon}</span>
                         <span className="sr-only">{link.title}</span>

@@ -79,7 +79,12 @@ export default async function Footer() {
   const collections = await getCollections()
 
   const collectionsData = collections.filter(
-    (collection) => collection.handle !== "home-page-featured"
+    (collection) =>
+      collection.handle !== "home-page-featured" &&
+      collection.handle !== "blouse" &&
+      collection.handle !== "two-pieces" &&
+      collection.handle !== "dress" &&
+      collection.handle !== "skirt"
   )
 
   return (

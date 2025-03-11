@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
-import heroImage from "@/public/images/LADIES WITH SHOPPING BAGS.jpg"
+// import heroImage from "@/public/images/LADIES WITH SHOPPING BAGS.jpg"
+import heroImage from "@/public/images/aboutHero.jpeg"
 import Link from "next/link"
 
 const HeroSection = () => {

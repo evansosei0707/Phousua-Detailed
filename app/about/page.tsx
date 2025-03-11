@@ -46,21 +46,21 @@ const statisticsData = [
 const valuesData = [
   {
     icon: <Heart className="h-6 w-6 text-primary" />,
-    title: "Made with Care",
+    title: "Minimal yet Detailed ",
     description:
-      "Every piece is crafted with attention to detail and love for quality craftsmanship.",
+      "Our designs embody a minimalist aesthetic enriched with artistic details. Each piece is subtly sophisticated, with carefully crafted elements that create a distinctive identity.",
   },
   {
     icon: <Recycle className="h-6 w-6 text-primary" />,
-    title: "Sustainable Practice",
+    title: "Timeless",
     description:
-      "We use eco-friendly materials and ethical production methods to minimize our environmental impact.",
+      "We design enduring pieces that transcend seasonal trends, offering classic styles that remain relevant and cherished over time.",
   },
   {
     icon: <Package className="h-6 w-6 text-primary" />,
-    title: "Quality First",
+    title: "Accessible Luxury",
     description:
-      "We never compromise on quality, ensuring each garment stands the test of time.",
+      "We deliver premium quality and refined sophistication through thoughtful craftsmanship. Our approach makes luxury an attainable experience, merging elegance with modern design in a way that is both inclusive and aspirational.",
   },
 ]
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <Link
             href="/search"
             prefetch={true}
-            className="gap-2 text-sm md:text-base bg-primary text-white hover:bg-primary/90 transition-colors duration-300 font-medium items-center justify-center px-6 py-3 rounded-full inline-flex"
+            className="gap-2 text-sm md:text-base bg-black hover:bg-gray-500 text-white hover:bg-primary/90 transition-colors duration-300 font-medium items-center justify-center px-6 py-3 rounded-full inline-flex"
           >
             Shop Collection <ArrowRight className="h-4 w-4 ml-1" />
           </Link>
@@ -208,7 +208,7 @@ export default function AboutPage() {
                       {[...Array(5)].map((_, j) => (
                         <svg
                           key={j}
-                          className="h-5 w-5 fill-primary"
+                          className="h-5 w-5 text-black dark:text-white"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >

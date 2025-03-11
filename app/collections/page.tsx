@@ -26,7 +26,7 @@ export default async function CollectionsPage() {
 
   return (
     <div className="w-full">
-      <div className="mx-auto max-w-screen-2xl px-4 py-4 sm:py-8 lg:px-4">
+      <div className="mx-auto max-w-screen-2xl py-4 sm:py-8 lg:px-4">
         <h1 className="mb-4 sm:mb-8 text-3xl sm:text-4xl font-bold text-center sm:text-left dark:text-white">
           Our Collections
         </h1>

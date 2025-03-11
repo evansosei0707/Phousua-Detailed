@@ -5,7 +5,12 @@ export async function Carousel() {
   const collections = await getCollections()
   const filteredCollections = collections.filter(
     (collection) =>
-      collection.handle !== "" && collection.handle !== "home-page-featured"
+      collection.handle !== "home-page-featured" &&
+      collection.handle !== "blouse" &&
+      collection.handle !== "two-pieces" &&
+      collection.handle !== "dress" &&
+      collection.handle !== "skirt" &&
+      collection.handle !== ""
   )
 
   if (!filteredCollections?.length) return null
