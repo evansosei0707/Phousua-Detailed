@@ -1,4 +1,3 @@
-// src/components/collections/collection-tile.tsx
 "use client"
 
 import Link from "next/link"
@@ -34,9 +33,6 @@ export default function CollectionTile({
 
   // Define brick layout classes based on the tile variant
   const getVariantClass = () => {
-    // On mobile, all tiles take full width
-    if (isMobile) return ""
-
     switch (variant) {
       case "large":
         return "sm:row-span-2" // Tall tile (2 rows)
@@ -47,11 +43,6 @@ export default function CollectionTile({
       default:
         return "" // Standard size (1x1)
     }
-  }
-
-  // Mobile height is consistent, desktop heights vary based on row spans
-  const getHeightClass = () => {
-    return isMobile ? "h-60" : ""
   }
 
   return (
@@ -65,12 +56,12 @@ export default function CollectionTile({
         href={`/search/${collection.handle}`}
         className={`
           group relative block overflow-hidden rounded-lg 
-          ${getHeightClass()}
+          h-[350px] sm:h-full
           transition-all duration-300 ease-in-out
           bg-gradient-to-br from-gray-100 to-gray-200
           dark:from-gray-800 dark:to-gray-900
           shadow-md hover:shadow-xl
-          w-full h-full
+          w-full
         `}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

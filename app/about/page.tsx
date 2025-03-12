@@ -1,6 +1,6 @@
 import { ArrowRight, Heart, Package, Recycle } from "lucide-react"
 import Image from "next/image"
-import heroImage from "@/public/images/aboutHero.jpeg"
+import heroImage from "@/public/images/about_hero.png"
 import ourStory from "@/public/images/our_story.png"
 import Link from "next/link"
 import { socialLinks } from "@/components/layout/footer"

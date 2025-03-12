@@ -241,7 +241,7 @@ export async function Navbar() {
       },
       {
         title: "Custom Made Outfits",
-        path: "/appointment/custom-made",
+        path: "/appointment",
         image: {
           url: CustomMadeImage,
         },
@@ -258,7 +258,7 @@ export async function Navbar() {
           </Suspense>
         </div>
         <div className="flex w-full items-center">
-          <div className="flex w-full mr-7 md:w-2/3">
+          <div className="flex w-full ml-1 lg:mr-7 md:w-2/3">
             <Link
               href="/"
               prefetch={true}

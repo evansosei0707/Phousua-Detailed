@@ -84,7 +84,8 @@ export default async function Footer() {
       collection.handle !== "blouse" &&
       collection.handle !== "two-pieces" &&
       collection.handle !== "dress" &&
-      collection.handle !== "skirt"
+      collection.handle !== "skirt" &&
+      collection.handle !== ""
   )
 
   return (
@@ -139,6 +140,9 @@ export default async function Footer() {
               Collections
             </h3>
             <ul className="flex flex-col items-start gap-1">
+              <li>
+                <Link href="/collections">All</Link>
+              </li>
               {collectionsData ? (
                 collectionsData.map((item: Collection) => (
                   <li key={item.handle}>
