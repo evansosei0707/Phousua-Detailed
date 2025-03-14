@@ -30,11 +30,11 @@ export default function NewAppointmentForm() {
   const [formState, setFormState] = useState<FormState>({ status: "idle" })
   const [selectedDate, setSelectedDate] = useState<Date | undefined>()
 
-  // Generate time slots from 12 PM to 6 PM
-  const timeSlots = Array.from({ length: 13 }, (_, i) => {
-    const hour = Math.floor(i / 2) + 12 // Start at 12 PM
-    const minute = i % 2 === 0 ? "00" : "30"
-    const ampm = "PM"
+  // Generate time slots from 12 PM to 6 PM with 1-hour intervals
+  const timeSlots = Array.from({ length: 7 }, (_, i) => {
+    const hour = i + 12 // Start at 12 PM
+    const minute = "00"
+    const ampm = hour >= 12 ? "PM" : "AM"
     const hour12 = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour
     return `${hour12}:${minute} ${ampm}`
   })
@@ -238,12 +238,12 @@ export default function NewAppointmentForm() {
       <div className="flex justify-between w-full items-center">
         <p className="text-sm text-gray-500 max-w-[60%]">
           <span className=" text-white font-medium">Please note:</span> Booking
-          an appointment may incur a service fee. Kindly review the terms and
-          conditions for further details.
+          an appointment incur a service fee, and your booking is confirmed only
+          upon payment of the consultation fee.
         </p>
         <Button
           type="submit"
-          className="w-full md:w-auto"
+          className="w-full md:w-auto bg-black dark:hover:bg-slate-500 text-white dark:bg-white dark:text-black"
           disabled={formState.status === "pending"}
         >
           {formState.status === "pending" ? (

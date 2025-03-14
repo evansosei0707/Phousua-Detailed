@@ -237,6 +237,11 @@ export async function Navbar() {
             path: "/appointment",
             image: bridalImage,
           },
+          {
+            title: "Wedding Guest",
+            path: "/appointment",
+            image: bridalImage,
+          },
         ],
       },
       {

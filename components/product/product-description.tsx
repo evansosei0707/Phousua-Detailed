@@ -3,6 +3,7 @@ import Price from "@/components/price"
 import Prose from "@/components/prose"
 import { Product } from "@/lib/shopify/types"
 import { VariantSelector } from "./variant-selector"
+import { SizeGuide } from "../chart/size-guide"
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
@@ -23,6 +24,10 @@ export function ProductDescription({ product }: { product: Product }) {
         />
       ) : null}
       <VariantSelector options={product.options} variants={product.variants} />
+
+      {/* Add the SizeGuide component here */}
+      <SizeGuide />
+
       <AddToCart product={product} />
     </>
   )

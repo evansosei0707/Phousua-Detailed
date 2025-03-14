@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 // import heroImage from "@/public/images/LADIES WITH SHOPPING BAGS.jpg"
-import heroImage from "@/public/images/aboutHero.jpeg"
+import heroImage from "@/public/images/Landing Page Photo.jpg"
 import Link from "next/link"
 
 const HeroSection = () => {
@@ -27,7 +27,7 @@ const HeroSection = () => {
         src={heroImage}
         alt="hero"
         fill
-        className="object-cover  w-full h-full"
+        className="object-cover object-top  w-full h-full"
       />
     </div>
   )

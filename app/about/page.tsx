@@ -1,6 +1,6 @@
 import { ArrowRight, Heart, Package, Recycle } from "lucide-react"
 import Image from "next/image"
-import heroImage from "@/public/images/about_hero.png"
+import heroImage from "@/public/images/cropped-HeroAbout (1).jpg"
 import ourStory from "@/public/images/our_story.png"
 import Link from "next/link"
 import { socialLinks } from "@/components/layout/footer"
@@ -89,11 +89,11 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen w-full bg-background">
       {/* Hero Section - Improved spacing and responsiveness */}
-      <section className="relative h-[50vh] md:h-[65vh] w-full overflow-hidden rounded-lg mx-auto mt-4 md:mx-6 md:mt-6">
+      <section className="relative h-[300px] md:h-[400px] lg:h-[600px] w-full overflow-hidden rounded-lg mx-auto mt-4 md:mx-6 md:mt-6">
         <Image
           src={heroImage}
           alt="Fashion collection showcase"
-          className="object-cover object-center"
+          className="object-cover object-top "
           fill
           priority
         />
@@ -103,10 +103,35 @@ export default function AboutPage() {
           <Link
             href="/search"
             prefetch={true}
-            className="gap-2 text-sm md:text-base bg-black hover:bg-gray-500 text-white hover:bg-primary/90 transition-colors duration-300 font-medium items-center justify-center px-6 py-3 rounded-full inline-flex"
+            className="gap-2 text-sm md:text-base bg-black dark:hover:bg-gray-500 hover:bg-gray-500 text-white hover:bg-primary/90 transition-colors duration-300 font-medium items-center justify-center px-6 py-3 rounded-full inline-flex"
           >
             Shop Collection <ArrowRight className="h-4 w-4 ml-1" />
           </Link>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      {/* Video Section */}
+      <section className="py-12 md:py-16 lg:py-24 bg-secondary/5">
+        <div className="container mx-auto max-w-6xl px-4">
+          <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
+            Our Journey
+          </h2>
+          <div className="mx-auto max-w-4xl">
+            <div className="relative overflow-hidden pb-[56.25%] rounded-2xl shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/czsR3bqG6oE?si=6lbdWLiRPwDNkK52"
+                title="Phosua Detailed - Our Story"
+                className="absolute top-0 left-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <p className="mt-6 text-center text-muted-foreground">
+              Watch our journey from a small startup to becoming Ghana&apos;s
+              leading sustainable fashion brand.
+            </p>
+          </div>
         </div>
       </section>
 
