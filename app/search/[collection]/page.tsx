@@ -50,6 +50,8 @@ export default async function CategoryPage(props: {
     reverse,
   })
 
+  console.log(params.collection)
+
   // console.log("My collections", products)
 
   return (

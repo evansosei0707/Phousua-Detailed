@@ -1,8 +1,8 @@
 import React from "react"
-import ProductGridItems from "../layout/product-grid-items"
 import Grid from "../grid"
 import { getCollectionProducts } from "@/lib/shopify"
 import Link from "next/link"
+import LatestCollectionGrid from "../layout/latest-collection-grid-items"
 
 const NewCollection = async () => {
   const products = await getCollectionProducts({
@@ -24,7 +24,7 @@ const NewCollection = async () => {
       </div>
       {products.length > 0 ? (
         <Grid className="grid-cols-1 h-full  mt-3 w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} />
+          <LatestCollectionGrid products={products} />
         </Grid>
       ) : null}
 

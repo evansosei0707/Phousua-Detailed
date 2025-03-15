@@ -6,14 +6,14 @@ import Label from "../label"
 // import WishlistButton from "@/components/wishlist/wishlist-button"
 import WishlistButton from "../wishlist/wishlist-button"
 
-export default function ProductGridItems({
+export default function LatestCollectionGrid({
   products,
 }: {
   products: Product[]
 }) {
   return (
     <>
-      {products.map((product) => (
+      {products.slice(0, 6).map((product) => (
         <Grid.Item key={product.handle} className="animate-fade min-h-[600px]">
           <div className="relative flex h-full w-full flex-col">
             <Link
