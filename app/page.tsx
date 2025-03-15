@@ -26,7 +26,7 @@ generateOpenGraphImage({
 })
 
 export const metadata: Metadata = {
-  title: "Book an Appointment | Fashion Studio",
+  title: "Phosua Detailed | Women's apparel and accessories",
   description:
     "Phosua Detailed, Women's apparel and accessories, made in Ghana, West Africa.",
   openGraph: url
