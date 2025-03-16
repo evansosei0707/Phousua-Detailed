@@ -1,5 +1,5 @@
 import Image from "next/image"
-import customGrid from "@/public/images/tag-banner.png"
+import customGrid from "@/public/images/orig_grid_image.jpg"
 import Link from "next/link"
 
 const WearToWedding = () => {
@@ -26,7 +26,7 @@ const WearToWedding = () => {
           href="/appointment"
           className=" dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white hover:border-2 dark:border-white border-2 border-black hover:border-black bg-black text-white rounded-full px-[46px] py-3 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 text-center"
         >
-          Schedule appointment
+          Book appointment
         </Link>
       </div>
     </div>

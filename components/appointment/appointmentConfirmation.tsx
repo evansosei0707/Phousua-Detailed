@@ -10,7 +10,7 @@ import {
   Heading,
   Text,
   Hr,
-  // Img,
+  Img,
   Link,
   Button,
 } from "@react-email/components"
@@ -85,16 +85,16 @@ export const AppointmentConfirmation: React.FC<
           {/* Logo and Greeting */}
           <Section style={{ padding: "30px 30px 20px", textAlign: "center" }}>
             {/* Logo placeholder - replace with your actual logo */}
-            <Text
+            <Img
+              src="https://res.cloudinary.com/drsjfyody/image/upload/v1742135405/home_open_graph_hpm2jt_lvpqqt.png"
+              alt="PHOSUA DETAILED"
+              width="150"
+              height="auto"
               style={{
-                fontSize: "24px",
-                fontWeight: "bold",
-                color: mainColor,
-                margin: "10px 0 20px",
+                margin: "0 auto 20px",
+                display: "block",
               }}
-            >
-              PHOSUA DETAILED
-            </Text>
+            />
 
             <Heading
               as="h2"

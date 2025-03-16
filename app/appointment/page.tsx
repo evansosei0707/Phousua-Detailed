@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next"
 import Image from "next/image"
-import consultImg from "@/public/images/Book an appointment photo.jpg"
+import consultImg from "@/public/images/appo-image.jpg"
 import NewAppointmentForm from "@/components/appointment/newAppointmentForm"
 
 export const metadata: Metadata = {
@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 
 export default function AppointmentPage() {
   return (
-    <div className="container mx-auto px-2 py-12">
+    <div className="container mx-auto py-12">
       {/* Hero Section */}
-      <section className="mb-16 h-[90vh] relative">
+      <section className="mb-16 h-[400px] md:h-[600px] rounded-xl overflow-hidden relative">
         {/* Full-height image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gray-100">
           <Image
             src={consultImg}
             alt="Fashion studio consultation"
-            className="object-cover w-full object-center h-full"
+            className="w-full h-full object-cover"
             priority
           />
           {/* Optional overlay for better text visibility */}
@@ -28,7 +28,7 @@ export default function AppointmentPage() {
         </div>
 
         {/* Animated Floating Arrow */}
-        <div className="absolute bottom-12 bg-black rounded-full p-4 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-4 md:bottom-12 bg-black rounded-full p-4 left-1/2 transform -translate-x-1/2">
           <a
             href="#book-now"
             aria-label="Scroll to booking form"

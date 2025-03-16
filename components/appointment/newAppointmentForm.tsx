@@ -235,15 +235,17 @@ export default function NewAppointmentForm() {
         />
       </div>
 
-      <div className="flex justify-between w-full items-center">
-        <p className="text-sm text-gray-500 max-w-[60%]">
-          <span className=" text-white font-medium">Please note:</span> Booking
-          an appointment incur a service fee, and your booking is confirmed only
-          upon payment of the consultation fee.
+      <div className="flex max-md:flex-col gap-4 items-start justify-between w-full md:items-center">
+        <p className="text-sm text-gray-500 w-full md:max-w-[60%]">
+          <span className=" dark:text-white text-black font-medium">
+            Please note:
+          </span>{" "}
+          Booking an appointment incur a service fee, and your booking is
+          confirmed only upon payment of the consultation fee.
         </p>
         <Button
           type="submit"
-          className="w-full md:w-auto bg-black dark:hover:bg-slate-500 text-white dark:bg-white dark:text-black"
+          className="w-full md:w-auto bg-black hover:bg-slate-500 text-white dark:bg-white dark:text-black"
           disabled={formState.status === "pending"}
         >
           {formState.status === "pending" ? (

@@ -1,7 +1,7 @@
 import { ArrowRight, Heart, Package, Recycle } from "lucide-react"
 import Image from "next/image"
-import heroImage from "@/public/images/cropped-HeroAbout (1).jpg"
-import ourStory from "@/public/images/our_story.png"
+import heroImage from "@/public/images/aboutHero.jpg"
+import ourStory from "@/public/images/our_story_image1.jpg"
 import Link from "next/link"
 import { socialLinks } from "@/components/layout/footer"
 import generateOpenGraphImage from "@/app/opengraph-image"
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <Image
           src={heroImage}
           alt="Fashion collection showcase"
-          className="object-cover object-top "
+          className="object-cover  "
           fill
           priority
         />
@@ -113,12 +113,12 @@ export default function AboutPage() {
       {/* Video Section */}
       {/* Video Section */}
       <section className="py-12 md:py-16 lg:py-24 bg-secondary/5">
-        <div className="container mx-auto max-w-6xl px-4">
+        <div className="container mx-auto max-w-6xl ">
           <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
             Our Journey
           </h2>
           <div className="mx-auto max-w-4xl">
-            <div className="relative overflow-hidden pb-[56.25%] rounded-2xl shadow-md">
+            <div className="relative overflow-hidden pb-[56.25%] max-h-[400px] rounded-2xl shadow-md">
               <iframe
                 src="https://www.youtube.com/embed/czsR3bqG6oE?si=6lbdWLiRPwDNkK52"
                 title="Phosua Detailed - Our Story"
@@ -137,9 +137,9 @@ export default function AboutPage() {
 
       {/* Story Section */}
       <section className="py-12 md:py-16 lg:py-24">
-        <div className="container mx-auto max-w-6xl px-4">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="relative h-[350px] sm:h-[400px] overflow-hidden rounded-2xl lg:h-[600px] order-2 lg:order-1">
+            <div className="relative h-[350px] sm:h-[400px]  lg:h-[600px] order-2 lg:order-1">
               <Image
                 src={ourStory}
                 alt="Our workshop"
@@ -187,7 +187,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="border-t py-12 md:py-16 lg:py-24">
-        <div className="container mx-auto max-w-6xl px-4">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="mb-8 md:mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
             Our Values
           </h2>
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
       {/* Testimonials Section */}
       <section className="py-12 md:py-16 lg:py-24">
-        <div className="container mx-auto max-w-6xl px-4">
+        <div className="container mx-auto max-w-6xl">
           {/* Testimonials */}
           <div>
             <h3 className="mb-8 text-center text-2xl font-semibold text-foreground">
@@ -262,7 +262,7 @@ export default function AboutPage() {
 
       {/* Contact Section */}
       <section className="border-t py-12 md:py-16 ">
-        <div className="container mx-auto max-w-6xl px-4 text-center">
+        <div className="container mx-auto max-w-6xl text-center">
           <h2 className="mb-4 text-2xl font-bold text-foreground">
             Connect With Us
           </h2>

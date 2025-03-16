@@ -6,6 +6,8 @@ import { AdminAlertEmail } from "./adminEmailAlert"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+console.log(resend)
+
 export const sendAppointmentEmail = async (
   name: string,
   service: string,
@@ -24,6 +26,8 @@ export const sendAppointmentEmail = async (
       subject: "Appointment Confirmation",
       html,
     })
+
+    console.log("sent email", data)
 
     return data
   } catch (error) {

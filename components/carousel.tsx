@@ -19,15 +19,20 @@ export async function Carousel() {
   const carouselCollections = [...filteredCollections, ...filteredCollections]
 
   return (
-    <div className="w-full scrollbar-hide overflow-x-auto pb-6 pt-1">
-      <ul className="flex animate-carousel gap-4">
-        {carouselCollections.map((collection, i) => (
-          <AllCollection
-            key={`${collection.handle}-${i}`}
-            collection={collection}
-          />
-        ))}
-      </ul>
+    <div className=" w-full flex flex-col items-start justify-center gap-4 ">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-start mb-4">
+        Browse our collection
+      </h2>
+      <div className="w-full scrollbar-hide overflow-x-auto pb-6">
+        <ul className="flex animate-carousel gap-4">
+          {carouselCollections.map((collection, i) => (
+            <AllCollection
+              key={`${collection.handle}-${i}`}
+              collection={collection}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
