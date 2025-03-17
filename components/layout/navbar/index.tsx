@@ -14,6 +14,7 @@ import WishlistIcon from "@/components/wishlist/wishlist-icon"
 import kenteImage from "@/public/images/book1.jpg"
 import CustomMadeImage from "@/public/images/book3.jpg"
 import bridalImage from "@/public/images/book2.jpg"
+import weddingGuest from "@/public/images/wedding_guest.jpg"
 import bridal1 from "@/public/images/bridal.png"
 import bridal2 from "@/public/images/customImage.png"
 import bridal3 from "@/public/images/book4.jpg"
@@ -243,7 +244,7 @@ export async function Navbar() {
           {
             title: "Wedding Guest",
             path: "/appointment",
-            image: bridalImage,
+            image: weddingGuest,
           },
         ],
       },

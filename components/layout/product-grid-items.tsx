@@ -14,14 +14,14 @@ export default function ProductGridItems({
   return (
     <>
       {products.map((product) => (
-        <Grid.Item key={product.handle} className="animate-fade min-h-[600px]">
+        <Grid.Item key={product.handle} className="animate-fade min-h-[550px]">
           <div className="relative flex h-full w-full flex-col">
             <Link
               className="flex h-full w-full flex-col"
               href={`/product/${product.handle}`}
               prefetch={true}
             >
-              <div className="h-full w-full overflow-hidden">
+              <div className="h-full w-full">
                 <GridTileImage
                   alt={product.title}
                   label={{
@@ -33,7 +33,7 @@ export default function ProductGridItems({
                   src={product.featuredImage?.url}
                   secondImage={product.images[1]?.image.url}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover xl:object-contain object-center"
                   priority={true}
                   quality={90}

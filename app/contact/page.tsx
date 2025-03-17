@@ -108,7 +108,7 @@ export default function ContactPage() {
                     <div className="grid gap-2 text-muted-foreground">
                       <div className="flex justify-between gap-8">
                         <p>Tuesday - Friday:</p>
-                        <p>10:00 AM GMT - 7:00 PM GMT</p>
+                        <p>10:00 AM GMT - 8:00 PM GMT</p>
                       </div>
                       <div className="flex justify-between gap-8">
                         <p>Saturday:</p>

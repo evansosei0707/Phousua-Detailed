@@ -13,10 +13,10 @@ export default function AllCollection({
     <>
       <Grid.Item
         key={collection.handle}
-        className="animate-fadeIn relative min-w-[300px] h-[400px]"
+        className="animate-fadeIn relative rounded-2xl overflow-hidden min-w-[300px] h-[400px]"
       >
         <Link
-          className="relative  h-full w-full"
+          className="relative rounded-2xl  h-full w-full"
           href={`/search/${collection.handle}`}
           prefetch={true}
         >
