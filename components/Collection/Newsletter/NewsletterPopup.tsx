@@ -1,9 +1,7 @@
 "use client"
 
 import Image from "next/image"
-// components/NewsletterPopup.tsx
 import { useState, useEffect, FormEvent, ChangeEvent } from "react"
-// import newsletterImage from "@/public/images/custom-made.webp"
 import newsletterImage from "@/public/images/newsletter_image.png"
 
 const NewsletterPopup: React.FC = () => {
@@ -11,6 +9,7 @@ const NewsletterPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
     // Check if the user has already seen the popup
@@ -28,15 +27,17 @@ const NewsletterPopup: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsLoading(true)
+    setError("")
 
     // Basic email validation
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       setError("Please enter a valid email address")
+      setIsLoading(false)
       return
     }
 
     try {
-      // Replace with your actual API endpoint for Shopify email subscription
       const response = await fetch("/api/newsletter-signup", {
         method: "POST",
         headers: {
@@ -44,6 +45,8 @@ const NewsletterPopup: React.FC = () => {
         },
         body: JSON.stringify({ email }),
       })
+
+      const data = await response.json()
 
       if (response.ok) {
         setIsSubmitted(true)
@@ -58,17 +61,19 @@ const NewsletterPopup: React.FC = () => {
           setIsVisible(false)
         }, 3000)
       } else {
-        const data = await response.json()
         setError(data.message || "Something went wrong. Please try again.")
       }
     } catch (error) {
       setError("Failed to subscribe. Please try again later.")
       console.error("Newsletter subscription error:", error)
+    } finally {
+      setIsLoading(false)
     }
   }
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
+    setError("") // Clear error when user starts typing
   }
 
   const closePopup = () => {
@@ -121,15 +126,19 @@ const NewsletterPopup: React.FC = () => {
                   className="w-full h-12 border border-gray-400 rounded px-4 font-mono focus:outline-none focus:border-black"
                   aria-label="Email"
                   required
+                  disabled={isLoading}
                 />
                 {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
               </div>
 
               <button
                 type="submit"
-                className="w-full h-14 bg-black text-white font-mono text-lg hover:bg-gray-800 transition-colors"
+                className={`w-full h-14 bg-black text-white font-mono text-lg hover:bg-gray-800 transition-colors ${
+                  isLoading ? "opacity-70 cursor-not-allowed" : ""
+                }`}
+                disabled={isLoading}
               >
-                SUBSCRIBE
+                {isLoading ? "SUBSCRIBING..." : "SUBSCRIBE"}
               </button>
             </form>
           )}
