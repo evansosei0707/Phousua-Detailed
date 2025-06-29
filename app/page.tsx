@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   title: "Phosua Detailed | Women's apparel and accessories",
   description:
     "Phosua Detailed, Women's apparel and accessories, made in Ghana, West Africa.",
+  robots: "noindex, nofollow", // 👈 this is the key
   openGraph: url
     ? {
         images: [

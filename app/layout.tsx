@@ -38,8 +38,8 @@ export const metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   robots: {
-    follow: true,
-    index: true,
+    follow: false,
+    index: false
   },
   openGraph: url
     ? {
