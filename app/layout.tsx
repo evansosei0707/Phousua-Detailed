@@ -39,7 +39,10 @@ export const metadata = {
   },
   robots: {
     follow: false,
-    index: false
+    index: false,
+  },
+  other: {
+    "google-site-verification": "Yd5qa0xJ2HwYp7iAV0SYdsUF6cw_63Z3VahMS9iiIZY",
   },
   openGraph: url
     ? {
