@@ -7,7 +7,7 @@ import { Suspense } from "react"
 import { navLinks } from "./navbar"
 import { Collection, Menu } from "@/lib/shopify/types"
 import { IoLogoWhatsapp } from "react-icons/io5"
-import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa"
+import { FaFacebook, FaYoutube, FaInstagram, FaPinterest } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { getCollections } from "@/lib/shopify"
 
@@ -65,6 +65,11 @@ export const socialLinks: Menu[] = [
     title: "Whatsapp",
     path: "https://wa.me/+233243058348",
     icon: <IoLogoWhatsapp />,
+  },
+  {
+    title: "Pinterest",
+    path: "https://pin.it/2oewZrCAX",
+    icon: <FaPinterest />,
   },
 ]
 

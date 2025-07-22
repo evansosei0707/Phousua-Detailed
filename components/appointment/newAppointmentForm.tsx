@@ -179,11 +179,14 @@ export default function NewAppointmentForm() {
                 selected={selectedDate}
                 onSelect={setSelectedDate}
                 disabled={(date) => {
-                  // Disable dates in the past and weekends
+                  // Disable dates in the past, weekends, and Mondays
                   const now = new Date()
                   now.setHours(0, 0, 0, 0)
                   return (
-                    date < now || date.getDay() === 0 || date.getDay() === 6
+                    date < now || 
+                    date.getDay() === 0 || // Sunday
+                    date.getDay() === 1 || // Monday - NEW: This excludes Mondays
+                    date.getDay() === 6    // Saturday
                   )
                 }}
                 initialFocus

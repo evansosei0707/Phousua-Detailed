@@ -17,8 +17,8 @@ export function WelcomeToast() {
         },
         description: (
           <>
-            Your best authentic African retail and wholesale online shop
-            offering quality and affordable clothing.
+            Your trusted online store, offering timeless pieces for today&quot;s
+            modern woman.
             <Link
               href="/search"
               className="text-blue-600 hover:underline"
